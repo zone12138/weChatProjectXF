@@ -1,0 +1,86 @@
+<!--pages/technology/equipmentDetail/equipmentDetail.wxml-->
+<view class="container">
+  <view class="detail-content">
+    <view class="full-width-height" wx:if="{{tabIndex == 0}}">
+      <scroll-view scroll-y>
+        <view class="basic-info">
+          <view class="info-title">基本信息</view>
+          <view class="info-content">
+            <view class="info-item flex-between-vertical">
+              <text>设备名称</text>
+              <text>{{equipmentDetail.equipmentName}}</text>
+            </view>
+            <view class="info-item flex-between-vertical">
+              <text>设备类型</text>
+              <text>{{equipmentDetail.equipmentType?equipmentDetail.equipmentType:'---'}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="full-width-height" wx:else>
+      <view class="flex-vertical time-picket">
+          <image src='../../../asset/imgs/production/picker.png' class="picker-icon" catchtap="showBox"></image>
+          <text>{{datePlus}}</text>
+          <text class="{{datePlus == datePlus1?'invisible':''}}">至</text>
+          <text class="{{datePlus == datePlus1?'invisible':''}}">{{datePlus1}}</text>
+          <text class="gray-font" catchtap="showBox">请选择</text>
+      </view>
+      <scroll-view scroll-y class="scroll-warn">
+        <view wx:if="{{warnRecord.length>0}}">
+          <view class="warn-item flex-vertical" wx:for="{{warnRecord}}">
+            <image src="../../../asset/imgs/technology/breakdownYellow.png"></image>
+            <view class="flex-col-between warn-item-detail">
+              <text>{{item.earlywarningReason}}</text>
+              <view >
+                <text>开始：{{item.earlywarningDateStr}}</text>
+                <text>修复：{{item.handleDateStr?item.handleDateStr:'未修复'}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:else class="no-data flex-col-center">
+          <image src="{{noDataImage}}" mode="widthFix"></image>
+          <text>当前页面没有内容 ~ </text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="btn-tab-bar flex">
+    <view class="btn-tab flex-center {{tabIndex == 0?'active':''}}" bindtap="changeTab" data-index="0">档案</view>
+    <view class="btn-tab flex-center {{tabIndex == 1?'active':''}}" bindtap="changeTab" data-index="1">预警记录</view>
+  </view>
+
+  <!--遮罩层，在框弹出后遮住框外区域-->
+  <view class='shade' hidden="{{hidden}}" bindtap='hiddenBox' catchtouchmove='true'></view>
+  <!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+  <view class="box-content {{animate=='showBox'?'showBox':'hiddenBox'}}" style='display:{{yesorno}};' catchtouchmove='true'>
+    <view class="flex-vertical">
+      <text decode="true">日期选择&nbsp;:</text>
+      <view>从</view>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2222-01-01" bindchange="bindDateChange">
+        <view class="input-content flex-vertical">
+          <input disabled placeholder="请选择日期" placeholder-class="gray-font" class="{{isClearShow?'imageShow':'imageHidden'}}  input-text" value="{{date}}" bindtap="selectDateTime"></input>
+        </view>        
+      </picker>
+      <view>到</view>
+      <picker mode="date" value="{{date1}}" start="1970-01-01" end="2222-01-01" bindchange="bindDateChangePlus">
+        <view class="input-content flex-vertical">
+          <input disabled placeholder="请选择日期" placeholder-class="gray-font" class="{{isClearShow?'imageShow':'imageHidden'}}  input-text" value="{{date1}}" bindtap="selectDateTime"></input>
+        </view>        
+      </picker>
+    </view>
+    <view class="flex">
+      <text decode="true">快速选择&nbsp;:&nbsp;&nbsp;</text>
+      <view class="flex-vertical flex-wrap">
+        <view class="time-btn {{timeTab == 1?'btn-active':''}}" bindtap="changeTimeTab" data-day="1">近 1 天</view>
+        <view class="time-btn {{timeTab == 7?'btn-active':''}}" bindtap="changeTimeTab" data-day="7">近 7 天</view>
+        <view class="time-btn {{timeTab == 15?'btn-active':''}}" bindtap="changeTimeTab" data-day="15">近15天</view>
+        <view class="time-btn {{timeTab == 30?'btn-active':''}}" bindtap="changeTimeTab" data-day="30">近30天</view>
+      </view>
+    </view>
+    <view class="submit">
+      <view class="flex-center" bindtap='comfireTime'>确定</view>
+    </view>
+  </view>
+</view>

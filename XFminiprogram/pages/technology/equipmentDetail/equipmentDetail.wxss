@@ -1,0 +1,285 @@
+/* pages/technology/equipmentDetail/equipmentDetail.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+
+.detail-content{
+  height: calc(100% - 110rpx);
+  width: 100%;
+}
+
+.basic-info{
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 40rpx;
+}
+
+.info-title{
+  height: 55rpx;
+  width: 100%;
+}
+
+.info-content{
+  width: 100%;
+  padding: 0rpx 25rpx 0rpx 25rpx;
+  box-sizing: border-box;
+}
+
+.info-item{
+  height: 65rpx;
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.btn-tab-bar{
+  height: 110rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn-tab-bar>.btn-tab{
+  height: 100%;
+  width: 50%;
+  font-size: 30rpx;
+}
+
+.btn-tab-bar>.btn-tab.active{
+  background-color: #4d62d6;
+  color: #fff;
+}
+
+.time-picket{
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 25rpx;
+  background-color: #fff;
+  /* margin-bottom: 25rpx; */
+  border-top: 1px solid #eeeeee;
+  justify-content: space-between;
+}
+.time-picket>text:nth-of-type(n){
+  width: 250rpx;
+  text-align: center;
+}
+.time-picket>text:nth-of-type(2){
+  width: 30rpx;
+}
+.time-picket>text:nth-of-type(4){
+  width: calc(100% - 530rpx);
+  text-align: right;
+}
+
+.box-content picker{
+  height: 100%;
+  width: calc(50% - 140rpx);
+}
+
+.input-content{
+  height: 91rpx;
+}
+
+.input-content>.imageShow{
+  /* width: calc(100% - 144rpx); */
+  /* width: calc(100% - 60rpx); */
+  width: 100%;
+}
+
+.input-content>.imageHidden{
+  /* width: calc(100% - 60rpx); */
+  width: 100%;
+}
+
+.clearImgShow{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 50rpx;
+}
+
+.clearImgHide{
+  display: none;
+}
+
+.picker-icon{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.production-content{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.shade {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 90rpx;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 99999;
+}
+ 
+@keyframes myfirst {
+  from {
+    transform: translateY(-860rpx);
+  }
+ 
+  to {
+    transform: translateY(0rpx);
+  }
+}
+ 
+@keyframes mylast {
+  from {
+    transform: translateY(0rpx);
+  }
+ 
+  to {
+    transform: translateY(-900rpx);
+  }
+}
+ 
+.hiddenBox {
+  animation: mylast;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 400rpx;
+  /* border: 2rpx solid #ededed; */
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  z-index: 999999;
+  background-color: #fff;
+}
+ 
+.showBox {
+  animation: myfirst;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 400rpx;
+  /* border: 2rpx solid #ededed; */
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  z-index: 999999;
+  background-color: #fff;
+}
+ 
+.box-content{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0rpx 25rpx;
+}
+
+.box-content>view>text{
+  width: 200rpx;
+}
+
+.box-content .time-btn{
+  border: 1px solid #999999;
+  padding: 10rpx 8rpx;
+  margin-right: 15rpx;
+  margin-bottom: 15rpx;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
+
+.box-content .btn-active{
+  color: #4379da !important;
+  border: 1px solid #4379da !important;
+}
+
+.submit{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit>view{
+  height: 50rpx;
+  width: 120rpx;
+  background-color: #4379da;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.input-text{
+  text-align: center;
+}
+
+/* 看不见但占位置 */
+.invisible{
+  visibility: hidden;
+}
+
+.warn-item{
+  height: 120rpx;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20rpx 25rpx;
+  border-top: 1px solid #eeeeee;
+}
+
+.warn-item>image{
+  height: 80rpx;
+  width: 80rpx;
+  margin-right: 25rpx;
+}
+
+.warn-item>.warn-item-detail{
+  width: calc(100% - 105rpx);
+  height: 100%;
+}
+
+.warn-item>.warn-item-detail>text{
+  font-size: 30rpx;
+}
+
+.warn-item>.warn-item-detail>view{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.warn-item>.warn-item-detail>view>text{
+  font-size: 23rpx;
+}
+
+.scroll-warn{
+  height: calc(100% - 90rpx);
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.no-data{
+  width: 100%;
+  height: 100%;
+}
+
+.no-data>image{
+  width: 100%;
+  margin-bottom: 30rpx;
+}

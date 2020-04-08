@@ -1,0 +1,159 @@
+/* pages/login/login.wxss */
+
+page{
+  height: 100%;
+}
+
+.login-bg{
+  width: 100%;
+  position: relative;
+}
+
+.login-bg>.bg-image{
+  width: 100%;
+}
+
+.logo>.logo-image{
+  height: 100%;
+  width: 100%;
+}
+
+.login-bg>.logo{
+  position: absolute;
+  top: 20%;
+  left: calc(50% - 90rpx);
+  z-index: 9999;
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.login-bg>.login-form{
+  position: absolute;
+  top: calc(20% + 250rpx);
+  width: 90%;
+  left: 5%;
+  height: 590rpx;
+  /* border: 1rpx solid #cccccc; */
+  box-shadow: 0 0 7px 2px #1a1a1a4d;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.login-form.flex-col-all-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.login-form .account,.login-form .password{
+  height: 70rpx;
+  width: 80%;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.login-form .account{
+  margin-top: 20rpx;
+}
+
+.login-form .account>input,.login-form .password>input{
+  height: 100%;
+  width: calc(100% - 100rpx);
+}
+
+.account>image,.password>image{
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 50rpx
+}
+
+.account .clear,.password .clear{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.clearBox{
+  width: 50rpx;
+  height: 50rpx;
+  z-index: 99999;
+  position: absolute;
+  right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gray-font{
+  color: #cccccc;
+}
+
+.white-bg{
+  background-color: #ffffff;
+}
+
+.login-btn{
+  height: 110rpx;
+  width: 80%;
+  position: relative;
+}
+
+.login-btn>image{
+  height: 100%;
+  width: 100%;
+}
+
+.login-btn>.login-text{
+  position: absolute;
+  left: calc(50% - 30rpx);
+  top: 30rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+
+.check-box{
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 15rpx;
+}
+
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #ffffff;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #41c2fc;
+  font-weight: 700;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.blue-font{
+  color: #41c2fc;
+}
+
+.remember-pass{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-pass view{
+  margin: 0rpx 20rpx;
+}

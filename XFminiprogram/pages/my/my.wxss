@@ -1,0 +1,162 @@
+/* pages/my/my.wxss */
+.my-info{
+  width:100%;
+}
+.my-info .my-message{
+  height: 350rpx;
+  width: 100%;
+  position: relative;
+}
+
+.my-info .my-message>image{
+  height: 350rpx;
+  width: 100%;
+  position: absolute;
+}
+
+.my-info .basic-message{
+   height: 350rpx;
+    width: 100%;
+    position: absolute;
+    z-index: 99999;
+    display: flex;
+}
+
+.my-info .one-part{
+  width: 25%;
+  height: 100%;
+}
+
+.my-info .two-part{
+  width: 60%;
+  height: 100%;
+  padding-left: 16px;
+}
+
+.my-info .three-part{
+  width: 8%;
+  height: 100%;
+}
+.my-info .flex-col-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-info .flex-col-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.my-info .head-portrait{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+
+.my-info .head-portrait>image{
+  width: 100%;
+  height: 100%;
+}
+
+.my-info .two-part .my-name{
+  font-size: 33rpx;
+  font-weight: 600;
+  color: #fff;
+
+}
+
+.my-info .two-part .my-account{
+  font-size: 25rpx;
+  color: #fff;
+}
+
+.my-info .three-part .edit-icon{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.my-info .three-part .edit-icon>image{
+  height: 100%;
+  width: 100%;
+}
+
+.my-info .my-record{
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+}
+
+.my-info .my-record .item{
+  width: 30%;
+  height: 100%;
+}
+
+.my-info .my-record .item>image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 15rpx;
+}
+
+.my-info .my-record .record-name{
+  color: #ccd0cf;
+  font-size: 25rpx;
+}
+
+.flex-grid{
+  display: flex;
+  justify-content:space-around;
+}
+
+.my-function{
+  margin-top: 25rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+}
+
+.my-function .list-item{
+  width: 100%;
+  height: 100rpx;
+}
+
+.my-function .list-item .function-icon{
+  width: 20%;
+  height: 100%;
+}
+
+.my-function .list-item .function-icon>image{
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.my-function .list-item .function-name{
+  width: 80%;
+  height: 100%;
+}
+
+.my-function .list-item .function-name>text{
+  font-size: 34rpx;
+}
+
+.border-bottom{
+  border-bottom: 1px solid #cfdbed;
+}
+
+.flex-all-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-vertical-center{
+  display: flex;
+  align-items: center;
+}
+
+.flex-across-center{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,126 @@
+/**app.wxss**/
+page{
+  background: #f8f8f8;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+/* 背景 */
+.bg{
+  width: 100%;
+  position: relative;
+}
+
+/* 灰色背景 */
+.gray-bg{
+  background-color: #f8f8f8;
+}
+
+/* 白色背景 */
+.white-bg{
+  background-color: #fff;
+}
+
+/* 蓝色背景 */
+.blue-bg{
+  background-color: #4379da !important;
+}
+
+/* 继承父元素百分百宽高 */
+.full-width-height{
+  height: 100%;
+  width: 100%;
+}
+
+/* 灰色字体 */
+.gray-font{
+  color: #dddddd;
+}
+
+.blue-font{
+  color: #0072bf;
+}
+
+/* flex布局 */
+.flex{
+  display: flex;
+}
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* flex垂直布局 */
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 垂直方向的水平垂直居中 */
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 水平方向（默认方向）的水平垂直居中 */
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 水平方向的水平居中 */
+.flex-horizontal{
+  display: flex;
+  justify-content: center;
+}
+
+/* 水平方向的水平居中 */
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 水平方向的垂直居中 */
+.flex-vertical{
+  display: flex;
+  align-items: center;
+}
+
+/* 垂直方向的水平居中 */
+.flex-col-horizontal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 垂直方向的垂直居中 */
+.flex-col-vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 垂直方向的垂直两边对齐 */
+.flex-col-between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 水平方向的水平两边对齐 垂直居中*/
+.flex-between-vertical{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

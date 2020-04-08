@@ -1,0 +1,51 @@
+<!--pages/production/waterReport/waterReport.wxml-->
+<view class="container gray-bg">
+  <view class="flex-vertical time-picket">
+    <image src='../../../asset/imgs/production/picker.png' class="picker-icon" catchtap="showBox"></image>
+    <text>{{date1}}</text>
+    <text class="gray-font" catchtap="showBox">请选择</text>
+  </view>
+  <scroll-view scroll-y class="scroll-views">
+    <view wx:if="{{waterReportData.length>0}}">
+      <view class="inwater-quality" wx:for="{{waterReportData}}">
+        <text class="title">{{item.title}}</text>
+        <view class="white-bg">
+          <view class="flex-vertical edit-content border-bottom" wx:for="{{item.data}}" wx:for-item="nape">
+            <text class="sub-title">{{nape.name}}</text>
+            <text>{{nape.value}}<text class="gray-font" decode="true">&nbsp;mg/L</text></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view wx:else class="no-data flex-col-center">
+      <image src="{{noDataImage}}" mode="widthFix"></image>
+      <text>当前页面没有内容 ~ </text>
+    </view>
+  </scroll-view>
+
+  <!--遮罩层，在框弹出后遮住框外区域-->
+  <view class='shade' hidden="{{hidden}}" bindtap='hiddenBox' catchtouchmove='true'></view>
+  <!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+  <view class="box-content {{animate=='showBox'?'showBox':'hiddenBox'}}" style='display:{{yesorno}};' catchtouchmove='true'>
+    <view class="flex-vertical">
+      <text decode="true">日期选择&nbsp;:</text>
+      <picker mode="date" value="{{date}}" start="1970-01-01" end="2222-01-01" bindchange="bindDateChange">
+        <view class="input-content flex-vertical">
+          <input disabled placeholder="请选择日期" placeholder-class="gray-font" class="{{isClearShow?'imageShow':'imageHidden'}}" value="{{date}}" bindtap="selectDateTime"></input>
+          <!-- <image class="{{isClearShow?'clearImgShow':'clearImgHide'}}" src='../../../asset/imgs/production/close.png' catchtap='clearTap'></image> -->
+          <image src='../../../asset/imgs/production/picker.png' class="picker-icon"></image>
+        </view>        
+      </picker>
+    </view>
+    <view class="flex-vertical">
+      <text decode="true">厂站选择&nbsp;:&nbsp;&nbsp;</text>
+      <view class="flex">
+        <view class="net-btn {{netValue==item.value?'btn-active':''}}" wx:for="{{netArray}}" bindtap="changeNet" data-num="{{item.value}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="submit">
+      <view class="flex-center" bindtap='hiddenBox'>确定</view>
+    </view>
+  </view>
+</view>

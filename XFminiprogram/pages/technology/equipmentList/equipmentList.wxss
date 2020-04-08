@@ -1,0 +1,53 @@
+/* pages/technology/equipmentList/equipmentList.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-views{
+  margin-top: 25rpx;
+  height: calc(100% - 125rpx);
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.equipment-content{
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-left: 25rpx;
+}
+
+.equipment-item{
+  height: 90rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #E5E5E5;
+  justify-content: space-between;
+}
+
+.equipment-item>image{
+  height: 38rpx;
+  width: 38rpx;
+  margin-right: 25rpx;
+}
+
+.hidden{
+  display: none;
+}
+
+.equipment-item:nth-last-of-type(1){
+  border-bottom: none;
+}
+
+.btn-content{
+  height: 90rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn-content>view{
+  height: 90%;
+  width: 98%;
+  background-color: #4379da;
+  color: #fff;
+}

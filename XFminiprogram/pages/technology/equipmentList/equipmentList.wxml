@@ -1,0 +1,14 @@
+<!--pages/technology/equipmentList/equipmentList.wxml-->
+<view class="container">
+  <scroll-view scroll-y class="scroll-views">
+    <view class="equipment-content">
+      <view class="equipment-item flex-vertical" wx:for="{{equipmentList}}" data-num="{{item.equipmentNum}}" data-name="{{item.equipmentName}}" bindtap="selectEquipment">
+        {{item.equipmentName}}
+        <image src="../../../asset/imgs/technology/selected.png" class="{{item.equipmentNum == equipmentNum?'':'hidden'}}"></image>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="btn-content flex-center">
+    <view class="flex-center" bindtap="submit">提交</view>
+  </view>
+</view>

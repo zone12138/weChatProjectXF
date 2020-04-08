@@ -1,0 +1,50 @@
+// 检测数组中是否含有某元素
+function indexOf(arr,value){
+  if (arr.indexOf(value) != -1){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+// 计算总和
+function productionSum(data){
+  var sum = 0;
+  data.forEach(function(item){
+    sum += item.Value
+  })
+  return sum.toFixed(3);
+}
+
+// 千位换算
+function conversion(val){
+  if (isNaN(val)){
+    return ;
+  }else{
+    if (val / 10000 > 1){
+      return ((val/1000).toFixed(3));
+    }else{
+      return val
+    }
+  }
+}
+
+// 判断是否满足千位换算
+function conversionUnit(val){
+  if (isNaN(val)) {
+    return false;
+  } else {
+    if (val / 10000 > 1) {
+      return true;
+    } else {
+      return false
+    }
+  } 
+}
+
+module.exports = {
+  indexOf: indexOf,
+  productionSum: productionSum,
+  conversion: conversion,
+  conversionUnit: conversionUnit
+}

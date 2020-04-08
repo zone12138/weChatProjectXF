@@ -1,0 +1,238 @@
+/* pages/production/waterReport/waterReport.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+
+.gray-bg{
+  background-color: #f8f8f8;
+}
+
+.time-picket{
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 25rpx;
+  background-color: #fff;
+  /* margin-bottom: 25rpx; */
+  border-top: 1px solid #eeeeee;
+  justify-content: space-between;
+}
+
+.time-picket>text:nth-of-type(1){
+  width: calc(100% - 210rpx)
+}
+
+.box-content picker{
+  height: 100%;
+  width: calc(100% - 200rpx);
+}
+
+.input-content{
+  height: 91rpx;
+}
+
+.input-content>.imageShow{
+  /* width: calc(100% - 144rpx); */
+  width: calc(100% - 60rpx);
+}
+
+.input-content>.imageHidden{
+  width: calc(100% - 60rpx);
+}
+
+.clearImgShow{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 50rpx;
+}
+
+.clearImgHide{
+  display: none;
+}
+
+.picker-icon{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.inwater-quality{
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+.title{
+  color: #0072bf;
+  padding-left: 25rpx;
+  font-size: 27rpx;
+}
+
+.white-bg{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding-left: 25rpx;
+  box-sizing: border-box;
+}
+
+.edit-content{
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.border-bottom{
+  border-bottom: 1px solid #eeeeee;
+}
+
+.edit-content>.sub-title{
+  width: 30%;
+  box-sizing: border-box;
+}
+
+.edit-content>input{
+  width: calc(70% - 100rpx)
+}
+
+.gray-font{
+  color: #dddddd;
+}
+
+.edit-content>text:nth-of-type(2){
+  padding-right: 20rpx;
+}
+
+.btn-content{
+  width: 100%;
+  margin: 40rpx 0rpx 0rpx 0rpx;
+  background-color: #f8f8f8;
+  padding-bottom: 10rpx;
+}
+
+.btn-content>button{
+  width: 95%;
+  background-color: #4379da;
+}
+
+
+.shade {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 90rpx;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 99999;
+}
+ 
+@keyframes myfirst {
+  from {
+    transform: translateY(-860rpx);
+  }
+ 
+  to {
+    transform: translateY(0rpx);
+  }
+}
+ 
+@keyframes mylast {
+  from {
+    transform: translateY(0rpx);
+  }
+ 
+  to {
+    transform: translateY(-900rpx);
+  }
+}
+ 
+.hiddenBox {
+  animation: mylast;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 300rpx;
+  /* border: 2rpx solid #ededed; */
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  z-index: 999999;
+  background-color: #fff;
+}
+ 
+.showBox {
+  animation: myfirst;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 300rpx;
+  /* border: 2rpx solid #ededed; */
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  z-index: 999999;
+  background-color: #fff;
+}
+ 
+.box-content{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0rpx 25rpx;
+}
+
+.box-content>view>text{
+  width: 200rpx;
+}
+
+.box-content .net-btn{
+  border: 1px solid #999999;
+  padding: 10rpx 30rpx;
+  margin-right: 15rpx;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
+
+.box-content .btn-active{
+  color: #4379da !important;
+  border: 1px solid #4379da !important;
+}
+
+.submit{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit>view{
+  height: 50rpx;
+  width: 120rpx;
+  background-color: #4379da;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+}
+
+.scroll-views{
+  width: 100%;
+  height: calc(100% - 90rpx);
+  overflow-y: scroll;
+}
+
+.no-data{
+  width: 100%;
+  height: 100%;
+}
+
+.no-data>image{
+  width: 100%;
+  margin-bottom: 30rpx;
+}

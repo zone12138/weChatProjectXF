@@ -1,0 +1,198 @@
+/* pages/technology/reported/reported.wxss */
+/*
+ * @Description: 
+ * @Author: xcr
+ */
+page{
+  height: 100%;
+  width: 100%;
+}
+
+.main-content{
+  height: calc(100% - 135rpx);
+  margin-top: 25rpx;
+  /* padding-left: 25rpx; */
+  /* background-color: #fff; */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.scroll-views{
+  padding-left: 25rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contentRow{
+  width:100%;
+  background-color: white;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+  border-bottom:  1px solid #E5E5E5;
+}
+
+.contentRow:nth-last-of-type(1){
+  border-bottom: none;
+}
+
+.contentTitle{
+  padding: 10rpx 20rpx;
+  white-space: nowrap;
+  width: 150rpx;
+  font-size: 32rpx;
+}
+
+.contentBox{
+  padding: 10rpx 20rpx;
+  flex: 1;
+}
+
+.contentTextarea{
+  width: 100%;
+  height: 100%;
+  padding: 12rpx 0rpx;
+}
+
+.deleteButton{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.sencePhoto{
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #ddd;
+}
+
+.imageBox{
+  width:150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+  position: relative;
+}
+
+.buttonDiv{
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #4379DA;
+  color:#fff;
+  font-size: 40rpx;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+.textarea-content{
+  /* height: 70rpx; */
+}
+.uploadBt{
+  text-align: right;
+  margin-right: 20rpx;
+  color: #5DB4ED;
+  font-size: 32rpx;
+  margin-bottom: 25rpx;
+}
+
+.main-stata{
+  position: relative;
+  margin-right: 80rpx;
+  min-height: 50rpx;
+}
+
+.main-stata-special{
+  position: relative;
+  margin-right: 0rpx;
+  min-height: 50rpx;
+}
+
+.dropDownImg{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 0;
+  right: 100rpx;
+}
+
+.stateOptionDiv{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 36rpx;
+}
+
+.stateOptionBox{
+  width:450rpx;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20rpx;
+  margin: 115rpx 200rpx;
+  max-height: 70%;
+  overflow: scroll;
+}
+
+.stateOptionRow{
+  padding: 20rpx;
+  font-size: 32rpx;
+
+}
+
+.stateOptionImg{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.sweepImg{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.btn-area {
+  height: 90rpx;
+  width: 99%;
+  background-color: #fff;
+  margin-top: 25rpx;
+  z-index: 99;
+}
+.btn-area button{
+	background-color: #4379DA !important;
+	width:100% !important;
+	height: 100% !important;
+	color: #fff;
+	border-radius: 0;
+	font-size: 35rpx;
+	/* letter-spacing: 20rpx; */
+}
+
+.right-triangle{
+  position: absolute;
+  bottom: 2rpx;
+  right: 20rpx;
+  width: 0rpx;
+  height: 0rpx;
+  border-color: #E5E5E5 transparent;
+  border-width: 0rpx 0rpx 30rpx 30rpx;
+  border-style: solid;
+}

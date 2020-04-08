@@ -1,0 +1,289 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 引入 -->
+  <wxs src="../../utils/util.wxs" module="tools" />
+	<view class="bg">
+			<image class="header-bg" src="../../asset/imgs/index/bg.png" mode="widthFix" />
+			<view class="production-info">
+				<scroll-view scroll-y="false" class="scroll-view">
+					<!-- 今日生产信息 start -->
+					<view class="flex-vertical">
+						<view class="react-icon" />
+						<text class="production-title">今日生产信息</text>
+					</view>
+					<!-- 今日生产信息 end -->
+					<!-- 外排总量 start -->
+					<view class="efflux">
+						<text>外排总量{{tools.conversionUnit(productionData.effSum)?'（km':'(m'}}<text class="sub-string">3</text>）</text>
+						<view class="efflux-content">
+							<text class="max-font">{{tools.conversion(productionData.effSum)}}</text>
+							<view class="flex-col">
+								<text class="text-right">昨日对比</text>
+								<view class="percent-font">
+									<image src="{{percentData.eff.flag == 1?upImage:downImage}}" mode="widthFix" />
+									<text>{{percentData.eff.value}}%</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<!-- 外排总量 end -->
+					<!-- 进水总量、出水总量 start -->
+					<view class="inwater-total">
+						<!-- 今日进水总流量 start -->
+						<view class="inwater-content">
+							<view class="flex-col">
+								<text>今日进水总流量{{tools.conversionUnit(productionData.enter.sum)?'（km':'(m'}}<text class="sub-string">3</text>)
+								</text>
+								<text class="percent-font">{{tools.conversion(productionData.enter.sum)}}</text>
+							</view>
+							<view class="flex-col">
+								<text class="text-right">昨日对比</text>
+								<view class="percent-font">
+									<image src="{{percentData.enter.flag == 1?upImage:downImage}}" mode="widthFix" />
+									<text>{{percentData.enter.value}}%</text>
+								</view>
+							</view>
+						</view>
+						<!-- 今日进水总流量 end -->
+						<!-- 各厂站今日进水总流量 start -->
+						<view class="factory-content">
+							<text class="{{index%2==0 && index+1 != productionData.enter.list.length ?'border-right':''}},{{index+1 == productionData.enter.list.length && index%2==0?'widthMax':''}}" wx:for="{{productionData.enter.list}}" wx:key="index">{{item.stationName}}{{tools.conversionUnit(item.val)?'（km':'(m'}}<text class="sub-string">3</text>)  <text class="num-font">{{tools.conversion(item.val)}}</text></text>
+						</view>
+						<!-- 各厂站今日进水总流量 end -->
+						<!-- 今日出水总流量 start -->
+						<view class="inwater-content">
+							<view class="flex-col">
+								<text>今日出水总流量{{tools.conversionUnit(productionData.out.sum)?'（km':'(m'}}<text class="sub-string">3</text>)</text>
+								<text class="percent-font">{{tools.conversion(productionData.out.sum)}}</text>
+							</view>
+							<view class="flex-col">
+								<text class="text-right">昨日对比</text>
+								<view class="percent-font">
+									<image src="{{percentData.out.flag == 1?upImage:downImage}}" mode="widthFix" />
+									<text>{{percentData.out.value}}%</text>
+								</view>
+							</view>
+						</view>
+						<!-- 今日出水总流量 end -->
+						<!-- 各厂站今日出水总流量 start -->
+						<view class="factory-content">
+							<text class="{{index%2==0 && index+1 != productionData.out.list.length ?'border-right':''}},{{productionData.out.list.length %2 ==0?(index + 2 == productionData.out.list.length || productionData.out.list.length == index+1?'no-border-bottom':''):(productionData.out.list.length == index+1?'no-border-bottom':'')}}" wx:for="{{productionData.out.list}}" wx:key="index">{{item.stationName}}{{tools.conversionUnit(item.val)?'（km':'(m'}}<text class="sub-string">3</text>)  <text class="num-font">{{tools.conversion(item.val)}}</text></text>
+						</view>
+						<!-- 各厂站今日出水总流量 end -->
+					</view>
+					<!-- 进水总量、出水总量 end -->
+					<!-- 进出水水质 start -->
+					<view class="water-quality">
+						<!-- 进出水水质标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+							<text>进出水水质</text>
+						</view>
+						<!-- 进出水水质标题 end -->
+						<!-- 厂站切换按钮  start -->
+						<view class="factory-btn">
+							<view wx:for="{{factoryInfo}}" wx:key="index" class="{{factoryNum == item.stationNum?'active':''}}" bindtap="changeFactory" data-num="{{item.stationNum}}">{{item.stationName}}</view>
+						</view>
+						<!-- 厂站  end -->
+						<!-- 进水水质 start -->
+						<view class="inwater-quality">
+							<text>进水水质</text>
+							<view class="quality-content">
+									<view class="cod">
+										<image src="../../asset/imgs/index/waterQuality.png"/>
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{inWaterQualityData['COD(mg/L)'] && inWaterQualityData['COD(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{inWaterQualityData["COD(mg/L)"] && inWaterQualityData["COD(mg/L)"].val?inWaterQualityData["COD(mg/L)"].val:0}}</text>
+                      <text>COD（mg/L）</text>
+                    </view>
+									</view>
+									<view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality1.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{inWaterQualityData['NH3-N(mg/L)'] && inWaterQualityData['NH3-N(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{inWaterQualityData["NH3-N(mg/L)"] && inWaterQualityData["NH3-N(mg/L)"].val?inWaterQualityData["NH3-N(mg/L)"].val:0}}</text>
+                      <text>NH3-N（mg/L）</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality2.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{inWaterQualityData['PH'] && inWaterQualityData['PH'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{inWaterQualityData["PH"] && inWaterQualityData["PH"].val?inWaterQualityData["PH"].val:0}}</text>
+                      <text>PH</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality3.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{inWaterQualityData['TN(mg/L)'] && inWaterQualityData['TN(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{inWaterQualityData["TN(mg/L)"] && inWaterQualityData["TN(mg/L)"].val?inWaterQualityData["TN(mg/L)"].val:0}}</text>
+                      <text>TN（mg/L）</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality4.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{inWaterQualityData['TP(mg/L)'] && inWaterQualityData['TP(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{inWaterQualityData["TP(mg/L)"] && inWaterQualityData["TP(mg/L)"].val?inWaterQualityData["TP(mg/L)"].val:0}}</text>
+                      <text>TP（mg/L）</text>
+                    </view>
+									</view>
+							</view>
+						</view>
+						<!-- 进水水质 end -->
+            <!-- 出水水质 start -->
+						<view class="inwater-quality">
+							<text>出水水质</text>
+							<view class="quality-content">
+									<view class="cod">
+										<image src="../../asset/imgs/index/waterQuality.png"/>
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{outWaterQualityData['COD(mg/L)'] && outWaterQualityData['COD(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{outWaterQualityData["COD(mg/L)"] && outWaterQualityData["COD(mg/L)"].val?outWaterQualityData["COD(mg/L)"].val:0}}</text>
+                      <text>COD（mg/L）</text>
+                    </view>
+									</view>
+									<view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality1.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{outWaterQualityData['NH3-N(mg/L)'] && outWaterQualityData['NH3-N(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{outWaterQualityData["NH3-N(mg/L)"] && outWaterQualityData["NH3-N(mg/L)"].val?outWaterQualityData["NH3-N(mg/L)"].val:0}}</text>
+                      <text>NH3-N（mg/L）</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality2.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{outWaterQualityData['PH'] && outWaterQualityData['PH'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{outWaterQualityData["PH"] && outWaterQualityData["PH"].val?outWaterQualityData["PH"].val:0}}</text>
+                      <text>PH</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality3.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{outWaterQualityData['TN(mg/L)'] && outWaterQualityData['TN(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{outWaterQualityData["TN(mg/L)"] && outWaterQualityData["TN(mg/L)"].val?outWaterQualityData["TN(mg/L)"].val:0}}</text>
+                      <text>TN（mg/L）</text>
+                    </view>
+									</view>
+                  <view class="nh3">
+										<image src="../../asset/imgs/index/waterQuality4.png" />
+                    <image class="small-image" src="../../asset/imgs/index/noPassed.png" wx:if="{{outWaterQualityData['TP(mg/L)'] && outWaterQualityData['TP(mg/L)'].isStandard == 0}}" mode="heightFix"></image>
+                    <view class="quality-parameter">
+                      <text>{{outWaterQualityData["TP(mg/L)"] && outWaterQualityData["TP(mg/L)"].val?outWaterQualityData["TP(mg/L)"].val:0}}</text>
+                      <text>TP（mg/L）</text>
+                    </view>
+									</view>
+							</view>
+						</view>
+						<!-- 出水水质 end -->
+					</view>
+					<!-- 进出水水质 end -->
+          <!-- 碳源投加情况 start -->
+          <view class="carbon-source">
+            <!-- 标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+							<text>碳源投加情况</text>
+						</view>
+						<!-- 标题 end -->
+            <!-- 厂站投加情况 start -->
+            <view class="flex">
+              <view class="carbon-factory">
+                <text>{{carbonSourceOne}}</text>
+                <text>今日一厂投加量（m3）</text>
+              </view>
+              <view class="carbon-factory">
+                <text>{{carbonSourceTwo}}</text>
+                <text>今日二厂投加量（m3）</text>
+              </view>
+            </view>
+            <!-- 厂站投加情况 start -->
+            <!-- ecahrts图 start -->
+            <view class="carbon-box">
+              <ec-canvas id="carbonCharts" ec="{{ carbonSource }}"></ec-canvas>
+            </view>
+            <!-- ecahrts图 end -->
+          </view>
+          <!-- 碳源投加情况 end -->
+          <!-- 预警信息 start -->
+          <view class="warn-info">
+            <!-- 标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+							<text>预警信息占比</text>
+						</view>
+						<!-- 标题 end -->
+            <!-- 预警信息echarts图 start -->
+            <view class="warn-box">
+              <ec-canvas id="warnCharts" ec="{{ warnInfo }}"></ec-canvas>
+            </view>
+            <!-- 预警信息echarts图 end -->
+            <!-- 预警信息描述 start -->
+            <view class="warn-detail">
+              <view wx:for="{{warnSortedData.data}}">
+                <view class="circle-icon" style="background-color:{{ warnColor[index]}}"></view>
+                <view class="{{index+1 == warnSortedData.data.length?'no-border-bottom':''}}">
+                  <text class="font-size-30">{{item.name}}预警次数<text class="gray-font font-size-30" decode="true">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{item.percent}}%</text></text>
+                  <text class="font-size-30">{{item.value}}次</text>
+                </view>
+              </view>
+            </view>
+            <!-- 预警信息描述 end -->
+          </view>
+          <!-- 预警信息 end -->
+          <!-- 今日垃圾总量 start -->
+          <view class="rubbish-today">
+            <!-- 标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+                <text>今日垃圾总量</text>
+              </view>
+						<!-- 标题 end -->
+            <view class="rubbish-detail">
+              <text class="max-blue" decode="true">{{rubbishTodayData.data[rubbishTodayData.data.length-1]}}&nbsp;&nbsp;吨</text>
+            </view>
+            <!-- 今日垃圾ecahrts图 start -->
+            <view class="warn-box no-border-bottom">
+              <ec-canvas id="rubbishCharts" ec="{{ rubbish }}"></ec-canvas>
+            </view>
+            <!-- 今日垃圾ecahrts图 start -->
+          </view>
+          <!-- 今日垃圾总量 end -->
+          <!-- 区域生活垃圾 start -->
+          <view class="rubbish-today">
+            <!-- 标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+                <text>区域生活垃圾占比</text>
+              </view>
+						<!-- 标题 end -->
+            <!-- 区域生活垃圾ecahrts图 start -->
+            <view class="warn-box no-border-bottom">
+              <ec-canvas id="areaCharts" ec="{{ rubbishArea }}"></ec-canvas>
+            </view>
+            <!-- 区域生活垃圾ecahrts图 start -->
+          </view>
+          <!-- 区域生活垃圾 end -->
+          <!-- 类型垃圾 start -->
+          <view class="rubbish-today margin-bottom">
+            <!-- 标题 start -->
+						<view class="flex-vertical">
+							<view class="blue-bg react-icon" />
+                <text>垃圾类型占比</text>
+              </view>
+						<!-- 标题 end -->
+            <!-- 类型垃圾ecahrts图 start -->
+            <view class="warn-box no-border-bottom">
+              <ec-canvas id="typeCharts" ec="{{ rubbishType }}"></ec-canvas>
+            </view>
+            <!-- 类型垃圾ecahrts图 start -->
+          </view>
+          <!-- 类型垃圾 end -->
+				</scroll-view>
+			</view>
+	</view>
+</view>
+

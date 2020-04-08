@@ -1,0 +1,73 @@
+/* pages/production/warnHistoryRecordDetail/warnHistoryRecordDetail.wxss */
+
+.warn-item{
+  background-color: #fff;
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+.warn-item>.warn-title{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+
+.warn-item>.warn-title>text:first-child{
+  font-size: 33rpx;
+  color: #004ea2;
+  font-weight: 600;
+}
+
+.warn-item>.warn-title>text:nth-child(2){
+  font-size: 28rpx;
+  color: #9999b3;
+}
+
+.warn-item>.warn-detail,.warn-item .warn-reason>view:first-child,.result-detail>.warn-detail,.result-detail .warn-reason>view:first-child{
+  height: 60rpx;
+  width: 100%;
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.warn-item .warn-reason,.result-detail .warn-reason{
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.warn-item .warn-reason>view:nth-child(n+2),.result-detail .warn-reason>view:nth-child(n+2){
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 10rpx;
+  padding: 25rpx;
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
+}
+
+.warn-item .warn-reason>view:last-child{
+  margin-bottom: 0rpx;
+}
+
+.warn-reason .blue-font{
+  color: #004ea2;
+  font-weight: 600;
+}
+
+.warn-result{
+  color: #004ea2;
+  font-weight: 600;
+  font-size: 28rpx;
+  padding-left: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-detail{
+  background-color: #fff;
+  padding: 10rpx 25rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+

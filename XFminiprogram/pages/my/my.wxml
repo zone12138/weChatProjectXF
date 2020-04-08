@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="my-info">
+
+    <view class="my-message">
+      <image src="../../asset/imgs/my/zu31.png"></image>
+      <view class="basic-message">
+        <view class="one-part flex-col-center">
+          <view class="head-portrait">
+            <image src="../../asset/imgs/my/touxiang.png"></image>
+          </view>
+        </view>
+
+        <view class="two-part flex-col-left">
+          <view class="flex-col-left">
+            <text class="my-name">{{userInfo.userName}}</text>
+            <text class="my-account">登录账号：{{userInfo.userNum}}</text>
+            <!-- <text class="my-account">所属部门：{{userInfo.deptName}}</text> -->
+            <text class="my-account">联系方式：{{userInfo.mobilePhone}}</text>
+          </view>
+        </view>
+        
+        <view class="three-part flex-col-right">
+          <view class="edit-icon" bindtap="editMessage">
+            <image src="../../asset/imgs/my/xiugai.png"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class="my-function">
+   <view class="list-item flex-all-center" bindtap="exitSystem">
+      <view class="function-icon flex-all-center">
+        <image src="../../asset/imgs/my/tuichu.png"></image>
+      </view>
+      <view class="function-name flex-vertical-center">
+        <text>退出系统</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<!--pages/production/warnTodayRecordDetail/warnTodayRecordDetail.wxml-->
+<view class="container">
+  <view class="main">
+    <scroll-view class="scroll-main" scroll-y>
+      <view class="warn-item">
+        <view class="warn-title">
+          <text>{{warnRecordData.technologyName}}</text>
+          <text>{{warnRecordData.earlyWarningDateStr}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>设备名称：{{warnRecordData.equipmentName}}</text>
+        </view>
+        <!-- <view class="warn-detail flex-vertical">
+          <text>上报人：{{warnRecordData.earlyWarningDateStr}}</text>
+        </view> -->
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text>预警原因：</text>
+          </view>
+          <view>
+              {{warnRecordData.earlywarningReason}}
+          </view>
+        </view>
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text class="blue-font">处理方案：</text>
+          </view>
+          <view>
+              <textarea placeholder="请输入" placeholder-class="gray-font" auto-height="true" maxlength="-1" bindinput="bindWarnScheme" value="{{warnScheme}}"></textarea>
+          </view>
+        </view>
+      </view>
+    
+      <view class="warn-scheme">
+        <!-- <view class="flex-vertical">
+          <text>处理人</text>
+          <input type="text" placeholder="请输入" placeholder-class="gray-font" value="{{warnPerson}}" bindinput="bindWarnPerson"></input>
+        </view> -->
+        <view class="flex-vertical">
+          <text>处理内容</text>
+          <input type="text" placeholder="请输入" placeholder-class="gray-font" value="{{warnRemark}}" bindinput="bindWarnRemark"></input>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+  <view class="bottom-btn flex-vertical">
+    <view class="flex-center" bindtap="submit">提交</view>
+  </view>
+</view>

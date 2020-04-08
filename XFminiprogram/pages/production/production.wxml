@@ -1,0 +1,42 @@
+<!--pages/production/production.wxml-->
+<view class="container">
+  <view class="bg">
+    <image src="../../asset/imgs/production/bg.png" mode="widthFix"></image>
+  </view>
+  <view class="production-function">
+    <view>
+      <view>
+        <image src="../../asset/imgs/production/realtimeWarnRecord.png" mode="widthFix" catchtap="changePage" data-path="warnTodayRecord"></image>
+      </view>
+      <text class="function-detail" catchtap="changePage" data-path="warnTodayRecord">今日预警记录</text>
+    </view>
+
+    <view>
+      <view>
+        <image src="../../asset/imgs/production/historyWarnRecord.png" mode="widthFix" catchtap="changePage" data-path="warnHistoryRecord"></image>
+      </view>
+      <text class="function-detail" catchtap="changePage" data-path="warnHistoryRecord">历史预警记录</text>
+    </view>
+
+    <view>
+      <view>
+        <image src="../../asset/imgs/production/carbonSourceRecord.png" mode="widthFix" catchtap="changePage" data-path="carbonSourceRecord"></image>
+      </view>
+      <text class="function-detail" catchtap="changePage" data-path="carbonSourceRecord">碳源投加记录</text>
+    </view>
+
+    <view>
+      <view>
+        <image src="../../asset/imgs/production/productionReport.png" mode="widthFix" catchtap="changePage" data-path="productionReport"></image>
+      </view>
+      <text class="function-detail" catchtap="changePage" data-path="productionReport">生产报表</text>
+    </view>
+
+    <view>
+      <view>
+        <image src="../../asset/imgs/production/waterQualityReport.png" mode="widthFix" catchtap="changePage"  data-path="waterReport"></image>
+      </view>
+      <text class="function-detail" catchtap="changePage" data-path="waterReport">水质报表</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/production/warnHistoryRecordDetail/warnHistoryRecordDetail.wxml-->
+<view class="container">
+    <scroll-view scroll-y>
+      <view class="warn-item">
+        <view class="warn-title">
+          <text>{{warnRecordData.technologyName}}</text>
+          <text>{{warnRecordData.earlyWarningDateStr}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>设备名称：{{warnRecordData.equipmentName}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>上报人：{{warnRecordData.technologyName}}</text>
+        </view>
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text>预警原因：</text>
+          </view>
+          <view>
+              {{warnRecordData.earlywarningReason}}
+          </view>
+        </view>
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text class="blue-font">处理方案：</text>
+          </view>
+          <view>
+              {{warnRecordData.handleProgramme}}
+          </view>
+          <!-- <view>
+              2.预警抽风，不用管
+          </view> -->
+        </view>
+      </view>
+      <text class="warn-result">处理结果</text>
+      <view class="result-detail">
+        <view class="warn-detail flex-vertical">
+          <text>处理人：{{warnRecordData.handleRecorderName}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>处理时间：{{warnRecordData.handleDateStr}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>处理状态：已办结</text>
+        </view>
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text>处理内容：</text>
+          </view>
+          <view>
+              {{warnRecordData.remarks}}
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>

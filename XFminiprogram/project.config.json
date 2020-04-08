@@ -1,0 +1,146 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.4",
+	"appid": "wxb96a82d0bbe4d833",
+	"projectname": "XFminiprogram",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "生产 - 生产报表",
+					"pathName": "pages/production/productionReport/productionReport",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产 - 水质报表",
+					"pathName": "pages/production/waterReport/waterReport",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "生产 - 碳源投加记录",
+					"pathName": "pages/production/carbonSourceRecord/carbonSourceRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产模块",
+					"pathName": "pages/production/production",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产 - 今日预警记录",
+					"pathName": "pages/production/warnTodayRecord/warnTodayRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产 - 历史预警记录",
+					"pathName": "pages/production/warnHistoryRecord/warnHistoryRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产 - 今日预警记录 - 详情",
+					"pathName": "pages/production/warnTodayRecordDetail/warnTodayRecordDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生产 - 历史预警记录 - 详情",
+					"pathName": "pages/production/warnHistoryRecordDetail/warnHistoryRecordDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "工艺模块",
+					"pathName": "pages/technology/technology",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "工艺 - 详情",
+					"pathName": "pages/technology/technologyList/technologyList",
+					"query": "stationNum=C1&technologyNum=t_4",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "工艺 - 设备 - 详情",
+					"pathName": "pages/technology/equipmentDetail/equipmentDetail",
+					"query": "stationNum=C1&technologyNum=t_4&equipmentNum=d_4_1",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "上报页面",
+					"pathName": "pages/technology/reported/reported",
+					"query": "stationNum=C1&technologyNum=t_4&equipmentNum=d_4_1&technologyName=出水调节池",
+					"scene": null
+				}
+			]
+		}
+	}
+}

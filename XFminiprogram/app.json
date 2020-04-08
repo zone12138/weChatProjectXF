@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/production/production",
+    "pages/production/warnTodayRecord/warnTodayRecord",
+    "pages/production/warnTodayRecordDetail/warnTodayRecordDetail",
+    "pages/production/warnHistoryRecord/warnHistoryRecord",
+    "pages/production/warnHistoryRecordDetail/warnHistoryRecordDetail",
+    "pages/production/carbonSourceRecord/carbonSourceRecord",
+    "pages/production/productionReport/productionReport",
+    "pages/production/waterReport/waterReport",
+    "pages/technology/technology",
+    "pages/technology/technologyList/technologyList",
+    "pages/technology/equipmentDetail/equipmentDetail",
+    "pages/technology/reported/reported",
+    "pages/technology/equipmentList/equipmentList",
+    "pages/my/my",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "兴丰填埋场",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"首页",
+      "iconPath":"asset/imgs/app/index.png",
+      "selectedIconPath":"asset/imgs/app/indexSelected.png"
+    },{
+      "pagePath": "pages/production/production",
+      "text": "生产",
+      "iconPath": "asset/imgs/app/production.png",
+      "selectedIconPath": "asset/imgs/app/productionSelected.png"
+    },{
+      "pagePath": "pages/technology/technology",
+      "text": "工艺",
+      "iconPath": "asset/imgs/app/technology.png",
+      "selectedIconPath": "asset/imgs/app/technologySelected.png"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "asset/imgs/app/my.png",
+      "selectedIconPath": "asset/imgs/app/mySelected.png"
+    }],
+    "color": "#939393",
+    "selectedColor": "#00a0ea"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

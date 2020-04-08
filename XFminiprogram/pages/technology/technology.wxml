@@ -1,0 +1,22 @@
+<!--pages/technology/technology.wxml-->
+<view class="container">
+  <view class="bg">
+    <image src="../../asset/imgs/technology/bg.png" mode="widthFix"></image>
+  </view>
+  <view class="technology-function">
+    <view class="swiper-tab">
+      <view wx:for="{{netArray}}" class="swiper-tab-item {{stationNum == item.stationNum?'active':''}}" data-num="{{item.stationNum}}" bindtap="clickTab">{{item.stationName}}</view>
+    </view>
+
+    <view class="technology-list">
+      <scroll-view scroll-y class="technology-scroll">
+        <view class="item-content">
+          <view wx:for="{{technologyList}}" class="technology-item" bindtap="changePage" data-id="{{item.id}}" data-name="{{item.technologyName}}">
+            {{item.technologyName}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+  </view>
+</view>

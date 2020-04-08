@@ -1,0 +1,39 @@
+<!--pages/technology/technologyList/technologyList.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view>
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">工艺监测数据</view>
+    </view>
+    <view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">设备情况</view>
+    </view>
+  </view>
+
+  <swiper current="{{currentTab}}" bindchange="swiperTab" class="swiper-content" style="height:{{swiperHeight}}">
+    <swiper-item class="swiper-items">
+      <scroll-view scroll-y="true" class="scroll-views">
+        <view class="flex-wrap">
+          <view class='technology-item flex-col-between' wx:for="{{technologyListParams}}">
+            <text class="value-font">{{item.listenValue}}</text>
+            <text class="type-font">{{item.listenParams}} <text wx:if="{{item.unit}}"> ({{item.unit}})</text></text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item class="swiper-items">
+      <scroll-view scroll-y="true" class="scroll-views">
+        <view class="equipment-list">
+          <view class='equipment-item flex-between-vertical' wx:for="{{equipmentList}}" bindtap="showDetail" data-eqnum="{{item.equipmentNum}}">
+            <text>{{item.equipmentName}}</text>
+            <text class="status-z-index">{{item.case}}</text>
+            <image src="{{item.imageUrl}}" class="status-image" mode="widthFix"></image>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view class="bottom-btn flex-center">
+    <view class="flex-center" bindtap="bindReported">上报</view>
+  </view>
+</view>

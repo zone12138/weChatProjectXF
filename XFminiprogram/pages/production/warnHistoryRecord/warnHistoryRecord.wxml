@@ -1,0 +1,31 @@
+<!--pages/production/warnHistoryRecord/warnHistoryRecord.wxml-->
+<view class="container">
+  <scroll-view scroll-y class="scroll-views">
+    <view class="box-content" wx:if="{{warnRecordData.length>0}}"> 
+      <view class="warn-item" bindtap="changePage" wx:for="{{warnRecordData}}" data-id="{{item.id}}" data-status="{{item.handleStats}}">
+        <view class="warn-title">
+          <text>{{item.technologyName}}</text>
+          <text>{{item.earlyWarningDateStr}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>设备名称：{{item.equipmentName}}</text>
+        </view>
+        <view class="warn-detail flex-vertical">
+          <text>处理状态：{{item.handleStats == '0'?'已办结':'未处理'}}</text>
+        </view>
+        <view class="warn-reason">
+          <view class="flex-vertical">
+            <text>预警原因：</text>
+          </view>
+          <view>
+              {{item.earlywarningReason}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="no-data flex-col-center">
+      <image src="{{noDataImage}}" mode="widthFix"></image>
+      <text>当前页面没有内容 ~ </text>
+    </view>
+  </scroll-view>
+</view>

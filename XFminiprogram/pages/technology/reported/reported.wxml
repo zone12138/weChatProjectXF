@@ -1,0 +1,49 @@
+<!--pages/technology/reported/reported.wxml-->
+<view class="container">
+    <scroll-view scroll-y class="main-content">
+      <view class="scroll-views">
+      <view class="contentRow">
+        <view class="contentTitle">工艺名称</view>
+        <view class="contentBox main-stata">{{technologyName}}</view>
+      </view>
+      <view class="contentRow">
+        <view class="contentTitle">设备名称</view>
+        <view class="contentBox main-stata-special {{equipmentName?'':'gray-font'}}" bindtap="selectEquipment">
+          {{equipmentName?equipmentName:'请选择'}}
+          <view class="right-triangle"></view>
+        </view>
+      </view>
+      <view class="contentRow">
+        <view class="contentTitle">故障描述</view>
+        <view class="contentBox textarea-content">
+          <textarea class="contentTextarea" bindinput="getFaultDescription" maxlength="-1" auto-height placeholder="请输入详细的故障描述" placeholder-class="flex-vertical gray-font"></textarea>
+        </view>
+      </view>
+      <view class="contentRow">
+        <view class="contentTitle">备注</view>
+        <view class="contentBox textarea-content">
+          <textarea class="contentTextarea" bindinput='getremark' maxlength="-1" auto-height placeholder="请详细描述不合格现象" placeholder-class="flex-vertical gray-font"></textarea>
+        </view>
+      </view>
+      <view class="contentRow">
+        <view class="contentTitle">故障照片</view>
+        <view class="contentBox">
+          <image wx:if="{{hasImg}}" src="../../../asset/imgs/technology/addPhoto.png" class="sencePhoto" bindtap='choosePhoto'></image>
+          <view class="uploadBt blue" wx:else bindtap='choosePhoto'>继续上传</view>
+          <view class="flex flex-wrap">
+            <block wx:for="{{tempFilePaths}}" wx:key="key">
+              <view class="imageBox">
+                <image src="../../../asset/imgs/technology/close.png" class="deleteButton" data-index="{{index}}" bindtap='deleteImages'></image>
+                <image class="sencePhoto" src="{{item}}" bindtap="previewiewImage" data-index="{{index}}" style="width: 100%;" />
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 提交按钮 -->
+  <view class="btn-area flex-center">
+    <button bind:tap="submit" class="flex-center" formType="submit">提交</button>
+  </view>
+</view>

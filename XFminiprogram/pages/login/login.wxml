@@ -1,0 +1,39 @@
+<!--pages/login/login.wxml-->
+<view class="container white-bg">
+  <view class="login-bg">
+    <image class="bg-image" src="../../asset/imgs/login/loginbg.png"></image>
+    <view class="logo">
+      <image class="logo-image" src="../../asset/imgs/login/logo.png"></image>
+    </view>
+    <view class="login-form flex-col-all-center">
+      <view class="account">
+        <image src="{{accountImage}}"></image>
+        <input type="text" bindfocus="foucusAccount" bindblur="blurAccount" placeholder="请输入用户名" placeholder-class="gray-font"  value="{{accountValue}}" bindinput="getAccount"></input>
+        <!-- <view class="clearBox" wx:if="{{accountClear}}" bindtap="clearAccount">
+          <image class="clear" src="../../asset/imgs/login/clear.png"></image>
+        </view> -->
+      </view>
+      <view class="password">
+        <image src="{{passwordImage}}"></image>
+        <input type="password" bindfocus="foucusPassword" bindblur="blurPassword"  placeholder="请输入密码" placeholder-class="gray-font" value="{{passwordValue}}"  bindinput="getPassword"></input>
+        <!-- <view class="clearBox" wx:if="{{passwordClear}}" bindtap="clearPassword">
+          <image class="clear" src="../../asset/imgs/login/clear.png"></image>
+        </view> -->
+      </view>
+      <view class="remember-pass">
+        <view bindtap="checkboxChange">
+          <checkbox class="check-box" checked="{{isChecked}}"></checkbox>
+          <text>记住密码</text>
+        </view>   
+        <view>
+          <text class="blue-font" bindtap="reset_method">重新初始化</text>
+        </view>
+      </view>
+      <view class="login-btn" bindtap="login">
+        <image src="../../asset/imgs/login/loginbtn.png"></image>
+        <text class="login-text">登录</text>
+      </view>
+    </view>
+  </view>
+</view>
+
